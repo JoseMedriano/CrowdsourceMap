@@ -15,10 +15,10 @@
     <link href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.67.0/dist/L.Control.Locate.min.css" rel="stylesheet">
     <link href="https://rawgit.com/mapshakers/leaflet-control-window/master/src/L.Control.Window.css" rel="stylesheet">
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-    <!--	<link href='https://github.com/anditabinas/mhawhereness/blob/master/leaflet-routing-machine.css' rel='stylesheet' /> -->
-    <!--	<link rel="stylesheet" href="https://github.com/anditabinas/mhawhereness/blob/master/css/MarkerCluster.css" /> -->
-    <!--	<link rel="stylesheet" href="https://github.com/anditabinas/mhawhereness/blob/master/leaflet-easy-button.css" /> -->
-    <!--	<link rel="stylesheet" href="https://github.com/anditabinas/mhawhereness/blob/master/leaflet-tag-filter-button.css" /> -->
+    <!--	<link href='https://github.com/JoseMedriano/CrowdsourceMap/blob/master/leaflet-routing-machine.css' rel='stylesheet' /> -->
+    <!--	<link rel="stylesheet" href="https://github.com/JoseMedriano/CrowdsourceMap/blob/master/css/MarkerCluster.css" /> -->
+    <!--	<link rel="stylesheet" href="https://github.com/JoseMedriano/CrowdsourceMap/blob/master/leaflet-easy-button.css" /> -->
+    <!--	<link rel="stylesheet" href="https://github.com/JoseMedriano/CrowdsourceMap/blob/master/leaflet-tag-filter-button.css" /> -->
 
 </head>
 
@@ -32,7 +32,7 @@
             </div>
             <div id="controls">
                 <input onclick="startEdits()" type="button" value="Hello.">
-                <input onclick="stopEdits()" type="button" value="Or talk to someone.">
+                <input onclick="stopEdits()" type="button" value="Testing123">
             </div>
             <div id="map"></div>
             <div id="credits">
@@ -40,12 +40,12 @@
                 <p>Crowdsource Map &copy;2020, Names</p>
             </div>
         </div>
-        <div id="dialog" title="Hello.">
+        <div id="dialog" title="Hi there!">
             <form>
                 <fieldset style="border: none;">
                     <ul style="list-style-type: none; padding-left: 0px">
-                        <li><label for="name">Name</label></li>
-                        <li><input id="name" name="name" placeholder="Your name" size="40" type="text" required></li> 
+                        <li><label for="nickname">Name</label></li>
+                        <li><input id="nickname" name="nickname" placeholder="Your name" size="40" type="text" required></li> 
                         <li><label for="description">About you + Contact Details</label></li>
                         <li><textarea cols="40" id="description" name="description" placeholder="Tell us a bit about yourself and why you're willing to listen to someone. Or a short message for someone who may be going through something right now." rows="5"></textarea></li>
                         <li><label for="age">Age</label></li>
@@ -67,7 +67,7 @@
         <script src="https://github.com/JoseMedriano/CrowdsourceMap/blob/master/leaflet-easy-button.js"></script>
         <script src="https://github.com/JoseMedriano/CrowdsourceMap/blob/master/leaflet-tag-filter-button.js"></script>
         <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-        <!--	<script src='https://github.com/anditabinas/mhawhereness/blob/master/leaflet-routing-machine.js'></script> -->
+        <!--	<script src='https://github.com/JoseMedriano/CrowdsourceMap/blob/master/leaflet-routing-machine.js'></script> -->
         <script type="text/javascript" src="dist/leaflet-control-credits.js"></script>
 
         <script>
@@ -211,9 +211,9 @@
                         }
                     });
                     var newData = layer.toGeoJSON(); //note: the first one is for the db, the second is for the code
-                    newData.properties.name = name.value;
-                    newData.properties.note = description.value;
-                    newData.properties.hear = age.value;                    
+                    newData.properties.name = nickname.value;
+                    newData.properties.description = description.value;
+                    newData.properties.age = age.value;                    
                     cartoData.addData(newData);
                 });
 
