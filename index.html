@@ -40,7 +40,7 @@
                 <p>Crowdsource Map &copy;2020, Names</p>
             </div>
         </div>
-        <div id="dialog" title="Hi there!">
+        <div id="dialog" title="Add">
             <form>
                 <fieldset style="border: none;">
                     <ul style="list-style-type: none; padding-left: 0px">
@@ -210,12 +210,12 @@
                             console.log("Problem saving the data");
                         }
                     });
-                    var newData = layer.toGeoJSON(); //note: the first one is for the db, the second is for the code
+                    var newData = layer.toGeoJSON(); 
                     newData.properties.name = nickname.value;
                     newData.properties.description = description.value;
                     newData.properties.age = age.value;                    
                     cartoData.addData(newData);
-                });
+                }); //note: the first one is for the db, the second is for the code
 
                 dialog.dialog("close");
             }
